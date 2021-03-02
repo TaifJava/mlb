@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://stg-wbd.mlb.com/html5/browser_browser_es5",
+  "baseUrl": "https://qa-wbd.mlb.com/html5/browser_browser_es5/",
   "video": true,
-  "testFiles": "**/home.feature"
+  "testFiles": "**/login.feature"
 }

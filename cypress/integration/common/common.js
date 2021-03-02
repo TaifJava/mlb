@@ -186,26 +186,35 @@ Then('I should see Calendar date picker is displayed', () => {
   cy.get(games.calendarDatePicker).should('be.visible')
 })
 
-When('I select my favorite team with text {string}', team => {
-    Cypress.config('defaultCommandTimeout', 10000);
-    cy.xpath(favorites.favoriteTeam).click()
-})
+// When('I select my favorite team with text {string}', team => {
 
-When('I click an element with text {string}', buttonText => {
-  cy.get('.mlb-onboarding-tile-label').contains(buttonText).click()
-})
+//     Cypress.config('defaultCommandTimeout', 10000);
+//     cy.get('body').type('{downarrow}')
+//   cy.get('body').type('{downarrow}')
+//   cy.get('body').type('{rightarrow}')
+//   cy.xpath(favorites.favoriteTeam2).click()
+//   cy.pause(2500)
+//   Cypress.config('defaultCommandTimeout', 5000);
+//     cy.xpath(favorites.favoriteTeam2).click()
 
+    
+// })
+
+// When('I click an element with text {string}', buttonText => {
+//   cy.get('.mlb-onboarding-tile-label').contains(buttonText).click()
+  
+// })
 When('I click done', () => {
   cy.get(favorites.done).click()
 })
 
-When('I type {string} in email', email => {
-  cy.get(login.email).type(email)
-})
+// When('I type {string} in email', email => {
+//   cy.get(login.email).type(email)
+// })
 
-When('I type {string} in password', password => {
-  cy.get(login.password).type(password)
-})
+// When('I type {string} in password', password => {
+//   cy.get(login.password).type(password)
+// })
 
 When('I click login', () => {
   cy.get(login.submit).click()
@@ -213,9 +222,10 @@ When('I click login', () => {
 
 
 
-When('I click next', () => {
-  cy.get(favorites.next).click()
-})
+// When('I click next', () => {
+//   cy.get(favorites.next).click()
+//   cy.pause(2500)
+// })
 
 When('I click right arrow', () => {
   cy.get('body').type('{rightarrow}')

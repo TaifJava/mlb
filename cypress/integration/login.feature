@@ -12,8 +12,8 @@ Feature: Login
     And I click an element with text "Log In"
     When I type "tvyearly@gmail.com" in email
     And I type "Password1" in password
-    #And I navigate down and press enter
-    #Then I should see "Successful Log In" as Login success message
+    Then I navigate down and press enter
+    And I should see "Successful Log In" as Login success message
 
     
     

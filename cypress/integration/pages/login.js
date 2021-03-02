@@ -16,7 +16,9 @@ const login = {
   termsAndService: '.mlb-form-terms',
   successMessage: '.mlb-login-success-message',
   loginCongratsMessage: 'mlb-login-congrats-message',
+  loginSuccessMessage: 'mlb-login-success-message',
   loginInfoMessage: 'mlb-login-info-message',
-  loginGetStartedButton: 'mlb-login-get-started-button'
+  loginGetStartedButton: 'mlb-login-get-started-button',
 
+  
 }
