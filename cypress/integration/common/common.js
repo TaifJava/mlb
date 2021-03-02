@@ -39,7 +39,9 @@ Then('I should see Hero Tile Title is displayed', () => {
 })
 
 Then('I should see {string} as Login success message', successText => {
-  cy.get(login.successMessage).should('contain',successText)
+  
+  cy.get(login.successMessage, { timeout: 10000 }).should('contain',successText)
+  
 })
 
 Then('I should see {string} as Login congrats message', congratsText => {

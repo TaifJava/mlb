@@ -7,7 +7,7 @@ Feature: Login
     Then I see "MLB.TV on Web" in the title
 
   Scenario: Login
-    When I select my favorite team with text "Cleveland Indians"
+    When I select a favorite team with text "Cleveland Indians"
     And I click next
     And I click an element with text "Log In"
     When I type "tvyearly@gmail.com" in email
