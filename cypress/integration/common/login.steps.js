@@ -17,18 +17,20 @@ import 'cypress-wait-until';
 require('cypress-xpath')
 
 
-When('I select my favorite team with text {string}', team => {
+// When('I select my favorite team with text {string}', team => {
 
-  Cypress.config('defaultCommandTimeout', 25000);
-  cy.get('body').type('{downarrow}')
-cy.get('body').type('{downarrow}')
-cy.get('body').type('{rightarrow}')
-cy.xpath(favorites.favoriteTeam2).click()
-cy.pause(2500)
-Cypress.config('defaultCommandTimeout', 5000);
-  cy.xpath(favorites.favoriteTeam2).click()
+//   Cypress.config('defaultCommandTimeout', 25000);
+//   cy.get('body').type('{downarrow}')
+//   cy.get('body').type('{downarrow}')
+//   cy.get('body').type('{rightarrow}')
+//   cy.xpath(favorites.favoriteTeam2).click()
+//   cy.pause(2500)
+//   Cypress.config('defaultCommandTimeout', 5000);
+//   cy.xpath(favorites.favoriteTeam2).click()
+// })
 
-  
+When('I select a favorite team with text {string}', teamname => {
+  cy.get('.mlb-favorites-team-name', { timeout: 10000 }).contains(teamname).click()
 })
 
 When('I click next', () => {
