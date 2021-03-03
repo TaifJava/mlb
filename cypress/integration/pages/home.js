@@ -15,6 +15,7 @@ const home = {
  
   //hero tile
   videoHero: '#videoHero',
+  gameHero: '#gameHero',
   heroTitle: '#videoHero [class^="Title"]',
   heroTimestamp: '#videoHero [class^="TimeStamp"]',
   heroDate: '#videoHero [class^="Date"]',

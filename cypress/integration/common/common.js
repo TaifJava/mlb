@@ -38,6 +38,14 @@ Then('I should see Hero Tile Title is displayed', () => {
   cy.get(home.heroTitle).should('be.visible')
 })
 
+When('I should see Game Hero Tile is displayed', () => {
+  cy.get(home.gameHero).should('be.visible')
+})
+
+Then('I should see Game Tile in Home is displayed', () => {
+  cy.get(home.gameTileHome).should('be.visible')
+})
+
 Then('I should see {string} as Login success message', successText => {
   
   cy.get(login.successMessage, { timeout: 10000 }).should('contain',successText)
@@ -238,14 +246,39 @@ When('I click down arrow', () => {
 })
 
 When('I scroll to Video Tile', () => {
-  //cy.get(home.videoTile).scrollIntoView()
   cy.get('body').type('{downarrow}')
   cy.get('body').type('{downarrow}')
 })
 
 When('I navigate to Games', () => {
+  cy.get(home.home, {timeout : 10000}).should('be.visible')
+  cy.pause(10000)
+  cy.get('body').type('{uparrow}')
+  cy.pause(3000)
   cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
   cy.get('body').type('{enter}')
+  cy.pause(3000)
+
+})
+
+When('I navigate to Settings', () => {
+  cy.get(home.home, {timeout : 10000}).should('be.visible')
+  cy.pause(10000)
+  cy.get('body').type('{uparrow}')
+  cy.pause(3000)
+  cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
+  cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
+  cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
+  cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
+  cy.get('body').type('{rightarrow}')
+  cy.pause(3000)
+  cy.get('body').type('{enter}')
+  cy.pause(10000)
 })
 
 When('I scroll to SVOD Tile', () => {
