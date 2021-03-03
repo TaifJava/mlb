@@ -7,7 +7,7 @@ Feature: Games
     Then I see "MLB.TV on Web" in the title
 
   Scenario: Verify Games
-    When I select my favorite team with text "Cleveland Indians"
+    When I select a favorite team with text "Cleveland Indians"
     And I click next
     And I click an element with text "Continue"
     When I navigate to Games
