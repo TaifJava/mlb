@@ -30,14 +30,16 @@ require('cypress-xpath')
 // })
 
 When('I select a favorite team with text {string}', teamname => {
-  cy.get(".mlb-favorites-team-name").then(function($elem) {
-    console.log($elem.text())
-  })
   cy.get('.mlb-favorites-team-name', { timeout: 10000 }).contains(teamname).click()
+  
+  // cy.get(".mlb-favorites-team-name").then(function($elem) {
+  //   console.log($elem.text())
+  // })
+  
 })
 
 When('I click next', () => {
-  cy.pause(2500)
+  cy.pause(3000)
   cy.get(favorites.next).click()
   
 })
