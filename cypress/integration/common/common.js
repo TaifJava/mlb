@@ -25,7 +25,9 @@ Given('I browse on a screen {string} and {string}', (width,height) => {
 })
 
 Given('I visit {string}', (url) => {
+  Cypress.config('defaultCommandTimeout', 10000);
   cy.visit(url)
+  
   cy.viewport(1920, 1080)
 })
 
