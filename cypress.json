@@ -1,5 +1,5 @@
 {
   "baseUrl": "https://wbd.mlb.com/html5/browser_browser_es5/",
   "video": true,
-  "testFiles": "**/SignUp.feature"
+  "testFiles": "**/settings.feature"
 }

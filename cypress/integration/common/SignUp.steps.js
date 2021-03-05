@@ -5,7 +5,7 @@ import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 import { SignUp } from '../pages/SignUp'
 
 import 'cypress-wait-until';
-import { now } from 'cypress/types/lodash';
+//import { now } from 'cypress/types/lodash';
 
 
 require('cypress-xpath')
@@ -39,7 +39,7 @@ When('Land on page title "Create a free MLB account..." on Email input field', (
 
 Then('I hit enter and input Email', () => {
   cy.get('body').type('{enter}')
-  cy.get(FreeEmailField).type('MLBmail'+ cy.clock(now) +'@gmail.com')
+  //cy.get(FreeEmailField).type('MLBmail'+ cy.clock(now) +'@gmail.com')
 })
 
 And('Input "{string}" as password', () => {

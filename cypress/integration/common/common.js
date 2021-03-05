@@ -48,10 +48,12 @@ Then('I should see Game Tile in Home is displayed', () => {
   cy.get(home.gameTileHome).should('be.visible')
 })
 
-Then('I should see {string} as Login success message', successText => {
-  
-  cy.get(login.successMessage, { timeout: 10000 }).should('contain',successText)
-  
+Then('I should see {string} in {string} is displayed with {string}', (eleName, page, locator) => {
+  cy.get(locator, { timeout: 10000 }).should('be.visible')
+})
+
+Then('I should see {string} as Login success message', successText => {  
+  cy.get(login.successMessage, { timeout: 10000 }).should('contain',successText)  
 })
 
 Then('I should see {string} as Login congrats message', congratsText => {

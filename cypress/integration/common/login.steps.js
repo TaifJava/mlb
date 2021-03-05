@@ -45,8 +45,11 @@ When('I click next', () => {
 })
 
 When('I click an element with text {string}', buttonText => {
-  cy.get('.mlb-onboarding-tile-label').contains(buttonText).click()
-  
+  cy.get('.mlb-onboarding-tile-label').contains(buttonText).click() 
+})
+
+When('I click element with text {string} and locator {string}', (btnText,locator) => {
+  cy.get(locator, { timeout: 10000 }).contains(btnText).click() 
 })
 
 When('I type {string} in email', email => {
@@ -57,17 +60,18 @@ When('I type {string} in password', password => {
   cy.get(login.password).type(password)
 })
 
-Then('I navigate down and press enter', () => {
+Then('I should see {string} in {string} is displayed with locator {string}', (eleName, page, locator) => {
+  cy.get(locator, { timeout: 20000 }).should('be.visible')
+})
 
+Then('I navigate down and press enter', () => {
   cy.get('body').type('{downarrow}')
-    cy.get('body').type('{enter}')
-    cy.pause(2500)
+  cy.get('body').type('{enter}')
+  cy.pause(2500)
 })
 
 And('I should see "Successful Log In" as Login success message', () => {
   cy.pause(5000)
-
   cy.get(login.successMessage).should('contain',successMessage)
   cy.pause(5000)
-}
- )
+})
