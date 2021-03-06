@@ -48,12 +48,12 @@ Then('I should see Game Tile in Home is displayed', () => {
   cy.get(home.gameTileHome).should('be.visible')
 })
 
-Then('I should see {string} in {string} is displayed with {string}', (eleName, page, locator) => {
-  cy.get(locator, { timeout: 10000 }).should('be.visible')
-})
-
 Then('I should see {string} as Login success message', successText => {  
   cy.get(login.successMessage, { timeout: 10000 }).should('contain',successText)  
+})
+
+Then('I should see text {string} in element {string}', (text,locator) => {  
+  cy.get(locator, { timeout: 10000 }).should('contain',text)  
 })
 
 Then('I should see {string} as Login congrats message', congratsText => {
@@ -268,7 +268,6 @@ When('I navigate to Games', () => {
 
 When('I navigate to Settings', () => {
   cy.get(home.home, {timeout : 10000}).should('be.visible')
-  cy.pause(10000)
   cy.get('body').type('{uparrow}')
   cy.pause(3000)
   cy.get('body').type('{rightarrow}')
@@ -282,7 +281,7 @@ When('I navigate to Settings', () => {
   cy.get('body').type('{rightarrow}')
   cy.pause(3000)
   cy.get('body').type('{enter}')
-  cy.pause(10000)
+  cy.pause(5000)
 })
 
 When('I scroll to SVOD Tile', () => {

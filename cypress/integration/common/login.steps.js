@@ -52,6 +52,14 @@ When('I click element with text {string} and locator {string}', (btnText,locator
   cy.get(locator, { timeout: 10000 }).contains(btnText).click() 
 })
 
+Then('I verify an element with text {string} and locator {string}', (btnText,locator) => {
+  cy.xpath(locator, { timeout: 10000 }).contains(btnText).should('be.visible') 
+})
+
+When('I click element in {string} with locator {string}', (page, locator) => {
+  cy.get(locator, { timeout: 10000 }).click() 
+})
+
 When('I type {string} in email', email => {
   cy.get(login.email).type(email)
 })
@@ -62,6 +70,10 @@ When('I type {string} in password', password => {
 
 Then('I should see {string} in {string} is displayed with locator {string}', (eleName, page, locator) => {
   cy.get(locator, { timeout: 20000 }).should('be.visible')
+})
+
+Then('I should see {string} in {string} is displayed with xpathlocator {string}', (eleName, page, locator) => {
+  cy.xpath(locator, { timeout: 20000 }).should('be.visible')
 })
 
 Then('I navigate down and press enter', () => {
